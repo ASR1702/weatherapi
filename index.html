@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp | API</title>
+</head>
+
+<body>
+    <div class="location">
+        <input id="city" type="text" placeholder="Enter the location">
+        <button onclick="fn1" id="btn1">search</a></button></input>
+
+    </div>
+    <script type="text/javascript">
+        const express = require('express')
+        const axios = require('axios')
+        const app = express()
+        const fs = require('fs');
+        const http = require('http');
+        const server = http.createServer(() => {
+            console.log('request made')
+        })
+        function fn1() {
+            var city = document.getElementById('city').value;
+            return 'city';
+        }
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2d2ee65b7c1b9528dc78762912ae0321`)
+            .then(fn1(),function (response) {
+                console.log(response.data);
+            })
+        app.listen(5500, localhost, () => {
+            console.log('listening on port 5500')
+        })
+
+    </script>
+</body>
+
+</html>
